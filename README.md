@@ -1,0 +1,1 @@
+# Money collecting game
