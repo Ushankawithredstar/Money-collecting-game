@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class FallingObject : MonoBehaviour, Iscore
+public class FallingObject : MonoBehaviour
 {
-    public int Score {get; set;}
-    // private int _score;
-
     private const string PLAYER_TAG = "Player";
     private const string GROUND_TAG = "Ground";
 
@@ -12,18 +9,13 @@ public class FallingObject : MonoBehaviour, Iscore
     {
         if (collision.gameObject.CompareTag(PLAYER_TAG))
         {
-            AddScore(1);
+            Score.AddScore(1);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag(GROUND_TAG))
         {
-            AddScore(- Score);
+            Score.AddScore(-Score.ScoreCount);
             Destroy(gameObject);
         }
-    }
-
-    public virtual int AddScore(int amount) 
-    {
-        return Score + amount;
     }
 }

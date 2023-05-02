@@ -1,17 +1,13 @@
 using UnityEngine;
 using TMPro;
 
-public class ScoreCounter : MonoBehaviour, Iscore
+public class ScoreCounter : MonoBehaviour
 {
-    public int Score {get; set;}
-
     [SerializeField] private TextMeshProUGUI scoreCounterText; 
-    // private TextMeshPro scoreCounter;
 
     private void Awake()
     {
         scoreCounterText = GetComponent<TextMeshProUGUI>();
-        // scoreCounter = GetComponent<TextMeshPro>();
     }
 
     private void Update()
@@ -21,7 +17,6 @@ public class ScoreCounter : MonoBehaviour, Iscore
 
     private void DisplayScore()
     {
-        scoreCounterText.text = "Score: " + Score;
-        // scoreCounter.text = "Score: " + Score;
+        scoreCounterText.text = "Score: " + Score.ScoreCount;
     }
 }
